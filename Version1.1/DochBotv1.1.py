@@ -39,8 +39,6 @@ numFound = 0
 
 # have some fun-ctions
 
-#TODO
-
 def replace_more_comments(target):
     try:
         submission.comments.replace_more()
@@ -143,7 +141,7 @@ def match_keywords_in_target(target):
     for word in keywords:
         if ((word in n_title) or (word in n_selftext) or (word in n_body)) and (check_duplicates(target) is False):
             print_positive_match(word, n_title, n_selftext, n_body)
-            reply_to(target)
+            #reply_to(target)
             return True
 
 # Main script
