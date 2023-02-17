@@ -13,6 +13,12 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      Username: ${{ secrets.USERNAME }}
+      Password: ${{ secrets.PASSWORD }}
+      UserAgent: ${{ secrets.USERAGENT }}
+      cID: ${{ secrets.CID }}
+      cSC: ${{ secrets.CSC }}
     
     steps:
     - uses: actions/checkout@v3
@@ -26,4 +32,4 @@ jobs:
         python -m pip install praw
     - name: Test with pytest
       run: |
-        python3 Version1.1/DochBotv1.1.py 
+        python3 Version1.1/DochBotv1.1.py Username $username Password $password UserAgent $useragent cID $cid cSC $csc
